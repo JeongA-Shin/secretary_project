@@ -93,6 +93,8 @@ import AgencyLandingPage from "demos/AgencyLandingPage";
 
 import SensorPage from "components/hero/SensorPage";
 import SwitchPage from "components/hero/SwitchPage";
+import BriefingPage from "components/hero/BriefingPage";
+import SignInPage from "components/hero/SignInPage";
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
@@ -101,8 +103,11 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/components/:type/:subtype/:name">
-          <ComponentRenderer />
+        <Route path="/signin">
+          <SignInPage />
+        </Route>
+        <Route path="/briefing">
+          <BriefingPage />
         </Route>
         <Route path="/switches">
           <SwitchPage />
