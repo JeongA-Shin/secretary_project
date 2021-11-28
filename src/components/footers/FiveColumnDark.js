@@ -9,7 +9,7 @@ import { ReactComponent as TwitterIcon } from "images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "images/youtube-icon.svg";
 
 const Container = tw.div`relative bg-gray-900 text-gray-100 -mx-8 -mb-8 px-8`;
-const Content = tw.div`max-w-screen-xl mx-auto pt-16 pb-8`
+const Content = tw.div`max-w-screen-xl mx-auto pt-16 pb-8`;
 const FiveColumns = tw.div`flex flex-wrap justify-between`;
 
 const Column = tw.div`w-1/2 md:w-1/5 mb-8 md:mb-0 text-sm sm:text-base text-center md:text-left`;
@@ -35,11 +35,11 @@ const SocialLink = styled.a`
   }
 `;
 
-const CopyrightAndCompanyInfoRow = tw.div`pb-0 text-sm font-normal flex flex-col sm:flex-row justify-between items-center`
-const CopyrightNotice = tw.div``
-const CompanyInfo = tw.div``
+const CopyrightAndCompanyInfoRow = tw.div`pb-0 text-sm font-normal flex flex-col sm:flex-row justify-between items-center`;
+const CopyrightNotice = tw.div``;
+const CompanyInfo = tw.div``;
 
-const Divider = tw.div`my-8 border-b-2 border-gray-800`
+const Divider = tw.div`my-8 border-b-2 border-gray-800`;
 export default () => {
   return (
     <Container>
@@ -48,24 +48,9 @@ export default () => {
           <CompanyColumn>
             <LogoContainer>
               <LogoImg src={LogoImage} />
-              <LogoText>Treact Inc.</LogoText>
+              <LogoText>HELLO Inc.</LogoText>
             </LogoContainer>
-            <CompanyAddress>
-              123 Road, New Startup Building
-              Carter Road, San Francisco
-              California 40234
-            </CompanyAddress>
-            <SocialLinksContainer>
-              <SocialLink href="https://facebook.com">
-                <FacebookIcon />
-              </SocialLink>
-              <SocialLink href="https://twitter.com">
-                <TwitterIcon />
-              </SocialLink>
-              <SocialLink href="https://youtube.com">
-                <YoutubeIcon />
-              </SocialLink>
-            </SocialLinksContainer>
+            <CompanyAddress>Kyung Hee University, Korea</CompanyAddress>
           </CompanyColumn>
           <Column>
             <ColumnHeading>Quick Links</ColumnHeading>
@@ -85,22 +70,20 @@ export default () => {
             </LinkList>
           </Column>
           <Column>
-            <ColumnHeading>Product</ColumnHeading>
-            <LinkList>
-              <LinkListItem>
-                <Link href="#">Log In</Link>
-              </LinkListItem>
-              <LinkListItem>
-                <Link href="#">Personal</Link>
-              </LinkListItem>
-              <LinkListItem>
-                <Link href="#">Business</Link>
-              </LinkListItem>
-              <LinkListItem>
-                <Link href="#">Team</Link>
-              </LinkListItem>
-            </LinkList>
+            <ColumnHeading>Follow Us</ColumnHeading>
+            <SocialLinksContainer>
+              <SocialLink href="https://facebook.com">
+                <FacebookIcon />
+              </SocialLink>
+              <SocialLink href="https://twitter.com">
+                <TwitterIcon />
+              </SocialLink>
+              <SocialLink href="https://youtube.com">
+                <YoutubeIcon />
+              </SocialLink>
+            </SocialLinksContainer>
           </Column>
+          {/*}
           <Column>
             <ColumnHeading>Legal</ColumnHeading>
             <LinkList>
@@ -118,14 +101,15 @@ export default () => {
               </LinkListItem>
             </LinkList>
           </Column>
+ */}
           <Column>
             <ColumnHeading>Contact</ColumnHeading>
             <LinkList>
+              <LinkListItem>+82 123-123-1234</LinkListItem>
               <LinkListItem>
-                +1 (234) (567)-8901
-              </LinkListItem>
-              <LinkListItem>
-                <Link href="mailto:support@servana.com">support@servana.com</Link>
+                <Link href="mailto:support@servana.com">
+                  support@servana.com
+                </Link>
               </LinkListItem>
               <LinkListItem>
                 <Link href="#">Sales</Link>
@@ -136,10 +120,10 @@ export default () => {
             </LinkList>
           </Column>
         </FiveColumns>
-        <Divider/>
+        <Divider />
         <CopyrightAndCompanyInfoRow>
-          <CopyrightNotice>&copy; Copyright 2020, Treact Inc.</CopyrightNotice>
-          <CompanyInfo>An Internet Company.</CompanyInfo>
+          <CopyrightNotice>&copy; Copyright 2020, HELLO.</CopyrightNotice>
+          {/*<CompanyInfo>An Internet Company.</CompanyInfo>*/}
         </CopyrightAndCompanyInfoRow>
       </Content>
     </Container>
