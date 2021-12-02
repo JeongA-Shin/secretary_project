@@ -55,8 +55,8 @@ export default ({
 }) => {
   const logoLink = (
     <LogoLink href="/">
-      <img src={logoImageSrc} alt="Logo" />
-      TeamName
+      {/*<img src={logoImageSrc} alt="Logo" />*/}
+      HELLO
     </LogoLink>
   );
   const navLinks = [
@@ -64,8 +64,8 @@ export default ({
       <NavLink href="/">Home</NavLink>
       <NavLink href="/sensors">Sensors</NavLink>
       <NavLink href="/switches">Switches</NavLink>
-      <NavLink href="/briefing">Briefing</NavLink>
-      <PrimaryLink href="#">Sign In</PrimaryLink>
+      {/*<NavLink href="/briefing">Briefing</NavLink>*/}
+      <PrimaryLink href="/signin">Sign In</PrimaryLink>
     </NavLinks>,
   ];
   return (
