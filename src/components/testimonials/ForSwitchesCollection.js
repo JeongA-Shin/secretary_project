@@ -12,6 +12,7 @@ import { ReactComponent as QuoteIconBase } from "images/quotes-l.svg";
 import { ReactComponent as ArrowLeftIcon } from "images/arrow-left-3-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "images/arrow-right-3-icon.svg";
 
+import GetStartedLight from "components/cta/GetStartedLight";
 import "slick-carousel/slick/slick.css";
 import Footer from "components/footers/FiveColumnDark.js";
 
@@ -124,6 +125,7 @@ export default ({
           ))}
         </TestimonialsSlider>
       </ContentWithPaddingXl>
+      <GetStartedLight />
       <Footer />
     </PrimaryBackgroundContainer>
   );

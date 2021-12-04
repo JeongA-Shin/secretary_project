@@ -48,7 +48,7 @@ export default () => {
           <CompanyColumn>
             <LogoContainer>
               <LogoImg src={LogoImage} />
-              <LogoText>HELLO Inc.</LogoText>
+              <LogoText>TO Inc.</LogoText>
             </LogoContainer>
             <CompanyAddress>Kyung Hee University, Korea</CompanyAddress>
           </CompanyColumn>

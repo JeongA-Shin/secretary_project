@@ -66,7 +66,7 @@ export default ({
       <NavLink href="/">Home</NavLink>
       <NavLink href="/sensors">Sensors</NavLink>
       <NavLink href="/switches">Switches</NavLink>
-      {/*<NavLink href="/briefing">Briefing</NavLink>*/}
+      <NavLink href="/briefing">Briefing</NavLink>
       <PrimaryLink href="/signin">Sign In</PrimaryLink>
     </NavLinks>,
   ];
@@ -76,8 +76,8 @@ export default ({
         <Content2Xl>
           <Header logoLink={logoLink} links={navLinks} />
         </Content2Xl>
+        <LoginPage />
       </PrimaryBackgroundContainer>
-      <LoginPage />
       <Footer />
     </AnimationRevealPage>
   );

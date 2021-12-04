@@ -1,8 +1,11 @@
 import React from "react";
 import tw from "twin.macro";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import ForSwitchesCollection from "components/testimonials/ForSwitchesCollection.js";
+import TwoPlansWithDurationSwitcher from "components/pricing/TwoPlansWithDurationSwitcher.js";
+import LoginPage from "pages/Login.js";
+import Footer from "components/footers/FiveColumnDark";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import Signup from "pages/Signup.js";
 import HeaderBase, {
   LogoLink as LogoLinkBase,
   NavLinks,
@@ -55,8 +58,8 @@ export default ({
 }) => {
   const logoLink = (
     <LogoLink href="/">
-      <img src={logoImageSrc} alt="Logo" />
-      TO
+      {/*<img src={logoImageSrc} alt="Logo" />*/}
+      HELLO
     </LogoLink>
   );
   const navLinks = [
@@ -74,8 +77,9 @@ export default ({
         <Content2Xl>
           <Header logoLink={logoLink} links={navLinks} />
         </Content2Xl>
+        <Signup />
       </PrimaryBackgroundContainer>
-      <ForSwitchesCollection />
+      <Footer />
     </AnimationRevealPage>
   );
 };

@@ -95,14 +95,17 @@ import SensorPage from "components/hero/SensorPage";
 import SwitchPage from "components/hero/SwitchPage";
 import BriefingPage from "components/hero/BriefingPage";
 import SignInPage from "components/hero/SignInPage";
+import SignUpPage from "components/hero/SignUpPage";
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
   // return <AnimationRevealPage disabled>xxxxxxxxxx</AnimationRevealPage>;
-
   return (
     <Router>
       <Switch>
+        <Route path="/signup">
+          <SignUpPage />
+        </Route>
         <Route path="/signin">
           <SignInPage />
         </Route>

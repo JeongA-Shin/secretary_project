@@ -1,7 +1,9 @@
 import React from "react";
 import tw from "twin.macro";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import ForSwitchesCollection from "components/testimonials/ForSwitchesCollection.js";
+import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColContactUsWithIllustrationFullForm.js";
+import Footer from "components/footers/FiveColumnDark.js";
+
 import { css } from "styled-components/macro"; //eslint-disable-line
 import HeaderBase, {
   LogoLink as LogoLinkBase,
@@ -75,7 +77,8 @@ export default ({
           <Header logoLink={logoLink} links={navLinks} />
         </Content2Xl>
       </PrimaryBackgroundContainer>
-      <ForSwitchesCollection />
+      <TwoColContactUsWithIllustrationFullForm />
+      <Footer />
     </AnimationRevealPage>
   );
 };
