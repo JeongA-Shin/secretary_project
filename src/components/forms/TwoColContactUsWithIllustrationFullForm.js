@@ -42,7 +42,7 @@ const Input = tw.input`mt-6 first:mt-0 border-b-2 py-3 focus:outline-none font-m
 
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`;
 
-const Example = () => {
+const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
   const onChange = (dates) => {
@@ -62,21 +62,6 @@ const Example = () => {
   );
 };
 
-const Example2 = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  return (
-    <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      showTimeSelect
-      showTimeSelectOnly
-      timeIntervals={15}
-      timeCaption="Time"
-      dateFormat="h:mm aa"
-    />
-  );
-};
-
 export default ({
   subheading = "Contact Us",
   heading = (
@@ -88,15 +73,42 @@ export default ({
   description = "브리핑 유형, 날짜, 시간을 정해주세요",
   space = " ",
   submitButtonText = "등록",
-  submitNews = "뉴스",
-  submitWeather = "날씨",
-  submitWork = "과제",
-  submitSchedule = "일정",
-  formAction = "#",
+  submitNews = "News",
+  submitWeather = "Weather",
+  submitWork = "Campus",
+  submitSchedule = "Schdule",
+  formAction = "/secretary_project/#/briefing",
   formMethod = "get",
   textOnLeft = true,
 }) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+  const [BriefingType, setBriefingType] = useState("");
+  const onTypeHandler = (e) => {
+    e.preventDefault();
+    setBriefingType(e.target.textContent);
+    //console.log("Type", e.target.textContent);
+    console.log(BriefingType);
+  };
+
+  const [newsKeyword, setNewsKeyword] = useState("");
+  const onKeyWordHandler = (e) => {
+    e.preventDefault();
+    setNewsKeyword(e.target.value);
+    console.log(newsKeyword);
+  };
+
+  const [startDate2, setStartDate2] = useState(new Date());
+
+  const onSubmitHandler = () => {
+    let body = {
+      briefingTime: { startDate2 },
+      contentList: [{ BriefingType }],
+      campusDay: 3,
+      newsKeywordList: [{ newsKeyword }],
+      newsCount: 3,
+      scheduleCount: 5,
+    };
+  };
+
   return (
     <Container>
       {/*<TwoColumn>*/}
@@ -107,27 +119,48 @@ export default ({
       {/*<TextColumn textOnLeft={textOnLeft}>*/}
       <TextColumn>
         <TextContent>
-          {/*{subheading && <Subheading>{subheading}</Subheading>}*/}
           <Heading>{heading}</Heading>
           {description && <Description>{description}</Description>}
-          <SubmitButton type="submit">{submitNews}</SubmitButton>
+          <SubmitButton type="click" onClick={onTypeHandler}>
+            {submitNews}
+          </SubmitButton>
           {space}
-          <SubmitButton type="submit">{submitWeather}</SubmitButton>
+          <SubmitButton type="click" onClick={onTypeHandler}>
+            {submitWeather}
+          </SubmitButton>
           {space}
-          <SubmitButton type="submit">{submitWork}</SubmitButton>
+          <SubmitButton type="click" onClick={onTypeHandler}>
+            {submitWork}
+          </SubmitButton>
           {space}
-          <SubmitButton type="submit">{submitSchedule}</SubmitButton>
+          <SubmitButton type="click" onClick={onTypeHandler}>
+            {submitSchedule}
+          </SubmitButton>
           <Form action={formAction} method={formMethod}>
             <Input
               type="text"
               name="name"
               placeholder="만약 뉴스를 선택하셨다면 뉴스 키워드를 정해주세요"
+              onChange={onKeyWordHandler}
             />
             {space && <Description>{space}</Description>}
-            <Example />
+            <Calendar />
             {space && <Description>{space}</Description>}
-            <Example2 />
-            <SubmitButton type="submit">{submitButtonText}</SubmitButton>
+            <DatePicker
+              selected={startDate2}
+              onChange={(date) => {
+                setStartDate2(date);
+                console.log(date);
+              }}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={15}
+              timeCaption="Time"
+              dateFormat="h:mm aa"
+            />
+            <SubmitButton type="submit" onSubmit={onSubmitHandler}>
+              {submitButtonText}
+            </SubmitButton>
           </Form>
         </TextContent>
       </TextColumn>
