@@ -57,17 +57,17 @@ export default ({
 }) => {
   const logoLink = (
     <LogoLink href="/">
-      {/*<img src={logoImageSrc} alt="Logo" />*/}
+      <img src={logoImageSrc} alt="Logo" />
       HELLO
     </LogoLink>
   );
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/sensors">Sensors</NavLink>
-      <NavLink href="/switches">Switches</NavLink>
-      <NavLink href="/briefing">Briefing</NavLink>
-      <PrimaryLink href="/signin">Sign In</PrimaryLink>
+      <NavLink href="/secretary_project/#/">Home</NavLink>
+      <NavLink href="/secretary_project/#/sensors">Sensors</NavLink>
+      <NavLink href="/secretary_project/#/switches">Switches</NavLink>
+      <NavLink href="/secretary_project/#/briefing">Briefing</NavLink>
+      <PrimaryLink href="/secretary_project/#/signin">Sign In</PrimaryLink>
     </NavLinks>,
   ];
   return (
